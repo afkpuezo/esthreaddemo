@@ -1,0 +1,1 @@
+print('Print1000to2000'[5:].split('to'))

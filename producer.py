@@ -13,5 +13,7 @@ def produce(programs: list[int]):
     """
     producer = KafkaProducer(bootstrap_servers = 'localhost:9092')
     for program in programs:
+        #print("DEBUG: about to produce", b'Program:' + str(program).encode())
         message = b'Program:' + str(program).encode()
         producer.send('esthread', message)
+    producer.send('esthread', b"END")
